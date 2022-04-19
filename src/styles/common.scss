@@ -25,3 +25,13 @@
     }
     
 }
+.exponent-calculator {
+    display: grid;
+    grid-template-columns: (3, 1fr);
+    gap: 10px;
+}
+.sliders{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

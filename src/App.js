@@ -6,6 +6,9 @@ import Greeting from "./widgets/Greeting"
 import Hidden from "./widgets/Hidden"
 import Resize from "./widgets/Resize"
 import Alignment from "./widgets/Alignment"
+import Color from "./widgets/Color"
+import Exponents from "./widgets/Exponents"
+
 
 function App() {
   return (
@@ -21,6 +24,10 @@ function App() {
       <Resize />
       <hr />
       <Alignment />
+      <hr />
+      <Color />
+      <hr />
+      <Exponents />
     </div>
   );
 }

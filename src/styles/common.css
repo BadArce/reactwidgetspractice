@@ -22,14 +22,30 @@
   text-decoration: none;
 }
 
-.navbar-container a a:hover {
-  font-size: 2rem;
-}
-
 .navbar-container .logo-wrapper {
   font-size: 28px;
   font-weight: 800;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: purple;
+}
+
+.exponent-calculator {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3, 1fr;
+      grid-template-columns: 3, 1fr;
+  gap: 10px;
+}
+
+.sliders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=common.css.map */
