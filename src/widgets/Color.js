@@ -27,7 +27,7 @@ export default function Colors() {
 
     return(
         <div>
-            <h1 className="Styler" style={{color: colors}}>Style me</h1>
+            <h1 className="styler" style={{color: colors}}>Style me</h1>
             <div className="sliders">
                 <div>
                     <input type="range" max="255" value={red} className="slider" id="Red" onInput={e => changeRed(e.target.value)}></input>
