@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
 
+import background from "../images/RDRBackground.jpg";
+
+const bckgrnd = {
+    backgroundImage : `url(${background})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    aspectRatio: "2/1",
+}
+
 export default function Dashboard(){
     return(
-        <div className="dashboard-container">
+        <div className="dashboard-container" style={bckgrnd}>
             <div className="widgets">
                 <h2>Counter</h2>
                 <h4>A simple counter app</h4>
