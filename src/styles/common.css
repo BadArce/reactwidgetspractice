@@ -1,9 +1,31 @@
-h1, h2, h3, h4, h5, h6, p, a {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 
 .view-container {
-  margin: 10px 10px;
+  margin: 0px 0px;
+}
+
+body {
+  margin: 0 0;
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: large;
+  background-color: purple;
+  color: whitesmoke;
+  border: 2px solid black;
 }
 
 .navbar-container {
@@ -33,7 +55,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 .navbar-container .logo-wrapper {
   font-size: 28px;
   font-weight: 800;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: purple;
 }
 
@@ -96,5 +118,11 @@ h1, h2, h3, h4, h5, h6, p, a {
   font-size: 20px;
   font-weight: 700;
   margin: 5px;
+}
+
+.log-out-button {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
 }
 /*# sourceMappingURL=common.css.map */

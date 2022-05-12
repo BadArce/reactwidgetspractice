@@ -1,72 +1,95 @@
-h1,h2,h3,h4,h5,h6,p,a{
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
-.view-container{
-    margin: 10px 10px;
+.view-container {
+  margin: 0px 0px;
 }
-.navbar-container{
-    width: 100%;
-    top: 0;
-    margin: 0;
-    height: 49px;
-    background-color: gray;
-    border-bottom: 2px solid aqua;
-    display: flex;
-    align-items:center;
-    justify-content: space-between;
 
-    a{
-        color: white;
-        font-weight: 600;
-        text-decoration: none;
-        
-    }
-    
-    .logo-wrapper {
-        font-size: 28px;
-        font-weight: 800;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        color: purple;
+body {
+  margin: 0 0;
+  height: 100%;
+  width: 100%;
+}
 
-    }
-    
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: large;
+  background-color: purple;
+  color: whitesmoke;
+  border: 2px solid black;
+}
+
+.navbar-container {
+  width: 100%;
+  top: 0;
+  margin: 0;
+  height: 49px;
+  background-color: gray;
+  border-bottom: 2px solid aqua;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .logo-wrapper {
+    font-size: 28px;
+    font-weight: 800;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: purple;
+  }
 }
 .exponent-calculator {
-    display: grid;
-    grid-template-columns: (3, 1fr);
-    gap: 10px;
+  display: grid;
+  grid-template-columns: (3, 1fr);
+  gap: 10px;
 }
-.sliders{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.sliders {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.styler{
-    font-size: 60px;
+.styler {
+  font-size: 60px;
 }
-.dashboard-container{
-    display: flex;
-    
+.dashboard-container {
+  display: flex;
 
-    .widgets{
-        height: 220px;
-        width: 180px;
-        display: flex;
-        border: 1px solid black;
-        border-radius: 10px;
-        background-color: lightslategray;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items:center;
-        padding-bottom: 10px;
-        margin: 10px 10px;
-    
-    }
+  .widgets {
+    height: 220px;
+    width: 180px;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: lightslategray;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    margin: 10px 10px;
+  }
 }
-.return-button{
-    width: 500px;
-    height: 30px;
-    font-size: 20px;
-    font-weight: 700;
-    margin: 5px;
+.return-button {
+  width: 500px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 5px;
+}
+.log-out-button {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
 }

@@ -7,11 +7,9 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 
-import "./styles/App.css";
 import "./styles/common.css";
-import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
-import About from "./components/About";
+// import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Counter from "./widgets/Counter";
 import Greeting from "./widgets/Greeting";
@@ -24,11 +22,13 @@ import Swapi from "./widgets/Swapi";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [name, setName] = useState("");
+  const [pass, setPass] = useState("");
   const AuthenticatedRoutes = () => {
     return (
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
-        <Route path="/about" element={<About />} />
+        {/* <Route path="/about" element={<About />} /> */}
         <Route path="/counter" element={<Counter />} />
         <Route path="/greeting" element={<Greeting />} />
         <Route path="/hidden" element={<Hidden />} />
@@ -40,12 +40,12 @@ function App() {
       </Routes>
     );
   };
-  async function loginGo() {
+  async function loginGo(uN, pW) {
     await fetch("https://devpipeline-mock-api.herokuapp.com/api/auth/login", {
       method: "POST",
       body: JSON.stringify({
-        userName: "michaela@devpipeline.com",
-        password: "1234",
+        userName: uN,
+        password: pW,
       }),
       headers: {
         "content-type": "application/json",
@@ -54,16 +54,16 @@ function App() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.message === "Logged In") {
-          return setIsAuthenticated(true);
+          setIsAuthenticated(true);
+          return;
         } else {
           console.log("Incorrect username/password.");
         }
       })
       .catch((err) => {
         console.error("Login Error: ", err);
-        const returnText = "Status: Logged Out";
+        return <h2>Sorry, please try again</h2>;
       });
   }
   function GoBack() {
@@ -78,22 +78,61 @@ function App() {
       );
     }
   }
+  function LogOut() {
+    async function logOutAPI() {
+      await fetch(
+        "https://devpipeline-mock-api.herokuapp.com/api/auth/logout",
+        {
+          credentials: "include",
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.message === "Logged out") {
+            setIsAuthenticated(false);
+          }
+        })
+        .catch((err) => {
+          console.error("Login Error: ", err);
+        });
+    }
 
+    return (
+      <div>
+        <button className="log-out-button" onClick={() => logOutAPI()}>
+          Logout
+        </button>
+      </div>
+    );
+  }
   return (
     <div className="App">
       <BrowserRouter>
         {!isAuthenticated && (
-          <button
-            onClick={(e) => {
-              loginGo(e.target.value);
-            }}
-          >
-            Login
-          </button>
+          <form className="login-wrapper" onSubmit={() => loginGo(name, pass)}>
+            <label>
+              Username:
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </label>
+            <label>
+              Password:
+              <input
+                type="text"
+                value={pass}
+                onChange={(e) => setPass(e.target.value)}
+              />
+            </label>
+            <input type="submit" value="Log In" />
+          </form>
         )}
         {isAuthenticated && <Navbar />}
         <GoBack />
         {isAuthenticated && <AuthenticatedRoutes />}
+        {isAuthenticated && <LogOut />}
       </BrowserRouter>
     </div>
   );
